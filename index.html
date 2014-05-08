@@ -29,10 +29,25 @@
 	<h2>Meetups:</h2>
 
 	<div data-ng-controller="SimpleController">
-		Filter <input type="text" data-ng-model="filter"></input>
 		<ul>
-			<li data-ng-repeat="d in data | filter:filter | orderBy:'continent'"> 
-				{{d.continent}} - {{d.country}} - <a href="{{d.link}}"/a> {{d.town}} <a> 
+			<li data-ng-repeat="(continentName, continent) in continents"> 
+				<b>{{continentName}}</b>
+				<ul>
+					<li data-ng-repeat="(countryName, country) in continent"> 
+						{{countryName}}
+						<ul>
+							<li data-ng-repeat="(stateName, state) in country"> 
+								<div ng-if="stateName != 'no-state'"> {{stateName}} </div>
+
+								<ul>
+									<li data-ng-repeat="group in state"> 
+										 <b>{{group.town}}</b> </br> <a href="{{group.link}}"/a>  {{group.link}} </a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
 			</li>
 		</ul>
 	</div>
