@@ -1,0 +1,3 @@
+[submodule "CommunityJsData"]
+	path = CommunityJsData
+	url = git@github.com:CommunityJS/CommunityJSData.git
