@@ -1,11 +1,11 @@
-angular.module('myModule', ['ui.bootstrap']);
+var app = angular.module('communityjs', ['ui.bootstrap']);
 
 
-function SimpleController($scope) {
+app.controller('GroupsController', function ($scope) {
 	$scope.data = rawdata;  
 	$scope.continents = makeGroups(rawdata)   
 	console.log($scope.continents)
-}
+});
 
 function sort(member) {
 	var sorted = {},

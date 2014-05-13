@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app>
+<html lang="en" ng-app="communityjs">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	<script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-boostrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 	<script src="CommunityJSData/rawdata"></script>
 	<script src="js/script.js"></script>
 
@@ -29,9 +29,9 @@
 
 	<h2>Meetups:</h2>
 
-	<div data-ng-controller="SimpleController">
+	<div ng-controller="GroupsController">
 		<ul>
-			<li data-ng-repeat="(continentName, continent) in continents"> 
+			<li ng-repeat="(continentName, continent) in continents"> 
 				<b>{{continentName}}</b>
 				<ul>
 					<li data-ng-repeat="(countryName, country) in continent"> 
