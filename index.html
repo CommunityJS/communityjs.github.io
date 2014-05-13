@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="communityjs">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,11 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-utils/ui-utils.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-map/ui-map.js"></script>
+
 	<script src="CommunityJSData/rawdata"></script>
 	<script src="js/script.js"></script>
 
@@ -29,7 +32,11 @@
 
 	<h2>Meetups:</h2>
 
-	<div ng-controller="GroupsController">
+	<section id="map" ng-controller="MapCtrl">
+  		<div ui-map="myMap" ui-options="mapOptions" class="map-canvas" style="height: 400px; width: 900px; "></div>
+	</section>
+
+	<div ng-controller="GroupsController" ng-app="communityjs">
 		<ul>
 			<li ng-repeat="(continentName, continent) in continents"> 
 				<b>{{continentName}}</b>
@@ -54,6 +61,9 @@
 	</div>
 
 </div>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"> </script>
 
 </body>
+
+
 </html>

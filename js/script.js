@@ -1,11 +1,25 @@
-var app = angular.module('communityjs', ['ui.bootstrap']);
+angular.module('communityjs', ['ui.bootstrap'])
+	.controller('GroupsController', function ($scope) {
+		$scope.data = rawdata;
+		$scope.continents = makeGroups(rawdata)   
+	});
 
 
-app.controller('GroupsController', function ($scope) {
-	$scope.data = rawdata;  
-	$scope.continents = makeGroups(rawdata)   
-	console.log($scope.continents)
-});
+function onGoogleReady() {
+	console.log('onGoogleReady')
+
+	angular.module('communityjs', ['ui.map'])
+		.controller('MapCtrl', ['$scope', function ($scope) {
+			$scope.mapOptions = {
+				zoom: 2,
+				disableDefaultUI: false,
+				center: new google.maps.LatLng(46.619261,12.6562),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+		}]);
+
+	angular.bootstrap(document.getElementById("map"), ['communityjs']);
+}
 
 function sort(member) {
 	var sorted = {},
