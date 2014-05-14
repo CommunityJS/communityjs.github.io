@@ -6,8 +6,6 @@ angular.module('communityjs', ['ui.bootstrap'])
 
 
 function onGoogleReady() {
-	console.log('onGoogleReady')
-
 	angular.module('communityjs', ['ui.map'])
 		.controller('MapCtrl', ['$scope', function ($scope) {
 			$scope.mapOptions = {
@@ -16,9 +14,44 @@ function onGoogleReady() {
 				center: new google.maps.LatLng(46.619261,12.6562),
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
+			
+			$scope.$watch('myMap', function(newValue, oldValue) {
+				for(var i in rawdata) {
+					addMarker(rawdata[i], $scope.myMap);
+				}
+           });
 		}]);
 
 	angular.bootstrap(document.getElementById("map"), ['communityjs']);
+}
+
+
+var addMarker = function(data, map) {
+	var conf_icon = new google.maps.MarkerImage("http://www.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png");
+	var group_icon = new google.maps.MarkerImage("http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png");
+
+	if(data.lat && data.lng) {
+		var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+		var icon = (data.continent == 'Conference') ? conf_icon : group_icon;
+		var marker = new google.maps.Marker({
+			position: myLatlng,
+			icon: icon
+		});
+		
+		var infowindow = new google.maps.InfoWindow({
+		    content: '<div id="infowindow">'
+				+ '<h2>' + data.town + '</h2>'
+				+ '<a href ="'+data.link+'">' + data.link + '</a>'
+				+ '</div>'
+		});
+		google.maps.event.addListener(marker, 'click', function() {
+		  	infowindow.open(map,marker);
+		});
+		
+		marker.setMap(map);       
+	} else {
+		console.log('Cant display ' + data.town)
+	}
 }
 
 function sort(member) {
