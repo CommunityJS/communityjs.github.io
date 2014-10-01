@@ -1,3 +1,5 @@
 [submodule "CommunityJSData"]
 	path = CommunityJSData
 	url = https://github.com/CommunityJS/CommunityJSData.git
+[CommunityJSData]
+	master = master
