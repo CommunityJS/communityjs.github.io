@@ -1,4 +1,12 @@
-rawdata = [ 
+rawdata = [
+    {
+        "continent": "Europe",
+        "country": "Iceland",
+        "lat": 64.1333,
+        "link": "https://www.facebook.com/groups/nodejsis",
+        "lng": 21.9333,
+        "town": "Reykjavik"
+    },
     {
         "continent": "Europe",
         "country": "Italy",
@@ -1221,6 +1229,15 @@ rawdata = [
         "town": "Jakarta"
     },
     {
+        "continent": "Asia",
+        "country": "China",
+        "lat": "31.225493",
+        "link": "http://www.meetup.com/Shanghai-JavaScript-Meetup/",
+        "lng": "121.432203",
+        "state": "Shanghai",
+        "town": "Shanghai"
+    },
+    {
         "continent": "North America",
         "country": "USA",
         "lat": 42.2814,
@@ -1252,5 +1269,14 @@ rawdata = [
         "link": "http://www.meetup.com/OWL-JS",
         "lng": 8.29146,
         "town": "Rheda-Wiedenbrück"
+    },
+	{
+        "continent": "North America",
+        "country": "USA",
+        "lat": 35.478527,
+        "link": "http://okcjs.com",
+        "lng": -97.519417,
+        "state": "Oklahoma",
+        "town": "Oklahoma City"
     }
 ]
