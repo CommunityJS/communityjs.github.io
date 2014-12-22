@@ -245,7 +245,7 @@ rawdata = [
         "continent": "Europe",
         "country": "France",
         "lat": 43.60465,
-        "link": "http://www.toulousejs.org/",
+        "link": "http://toulousejs.francejs.org",
         "lng": 1.44421,
         "town": "Toulouse"
     },
@@ -546,6 +546,15 @@ rawdata = [
         "lng": -78.638614,
         "state": "North Carolina",
         "town": "Raleigh-Durham"
+    },
+    {
+        "continent": "North America",
+        "country": "USA",
+        "lat": 39.763355,
+        "link": "http://gemcityjs.com",
+        "lng": -84.182244,
+        "state": "Ohio",
+        "town": "Dayton"
     },
     {
         "continent": "North America",
