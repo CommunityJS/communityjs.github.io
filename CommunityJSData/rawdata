@@ -1,10 +1,18 @@
 rawdata = [
     {
+        "continent": "Africa",
+        "country": "Morocco",
+        "lat": 33.533333,
+        "link": "https://moroccojs.org",
+        "lng": -7.583333,
+        "town": "Casablanca"
+    },
+    {
         "continent": "Europe",
         "country": "Poland",
-        "lat": 52.25196425,
+        "lat": 52.252809,
         "link": "https://www.facebook.com/warsawjs",
-        "lng": 20.9976245490517,
+        "lng": 20.997650,
         "town": "Warsaw"
     },
     {
@@ -743,6 +751,14 @@ rawdata = [
     },
     {
         "continent": "Europe",
+        "country": "Netherlands",
+        "lat": 53.221705,
+        "link": "http://www.meetup.com/GrunnJS/",
+        "lng": 6.564752,
+        "town": "Groningen"
+    },
+    {
+        "continent": "Europe",
         "country": "Sweden",
         "lat": 57.696994,
         "link": "http://twitter.com/got_js",
@@ -1289,6 +1305,14 @@ rawdata = [
     },
     {
         "continent": "Europe",
+        "country": "Slovenia",
+        "lat": 46.0556,
+        "link": "http://www.meetup.com/Ljubljana-JavaScript-User-Group/",
+        "lng": 14.5083,
+        "town": "Ljubljana"
+    },
+    {
+        "continent": "Europe",
         "country": "Germany",
         "lat": 49.452949,
         "link": "http://frankenjs.org/",
@@ -1319,5 +1343,13 @@ rawdata = [
         "lng": -97.519417,
         "state": "Oklahoma",
         "town": "Oklahoma City"
+    },
+    {
+        "continent": "Europe",
+        "country": "France",
+        "lat": 48.111980,
+        "link": "http://rennesjs.org",
+        "lng": -1.674290,
+        "town": "Rennes"
     }
 ]
